@@ -1,32 +1,32 @@
 function add(a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 }
 
 function subtract(a, b) {
-  return a - b;
+  return Number(a) - Number(b);
 }
 
 function multiply(a, b) {
-  return a * b;
+  return Number(a) * Number(b);
 }
 
 function divide(a, b) {
-  return a / b;
+  return Number(a) / Number(b);
 }
 
-function operate(operator, firstNumber, secondNumber) {
-  switch(operator) {
+function operate(inputOperator, firstOperateNumber, secondOperateNumber) {
+  switch(inputOperator) {
     case "+":
-      add(firstNumber, secondNumber);
+      add(firstOperateNumber, secondOperateNumber);
       break;
     case "-":
-      subtract(firstNumber, secondNumber);
+      subtract(firstOperateNumber, secondOperateNumber);
       break;
     case "*":
-      multiply(firstNumber, secondNumber);
+      multiply(firstOperateNumber, secondOperateNumber);
       break;
     case "/":
-      divide(firstNumber, secondNumber);
+      divide(firstOperateNumber, secondOperateNumber);
       break;
   }
 }
