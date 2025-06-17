@@ -32,11 +32,19 @@ function operate(operator, firstNumber, secondNumber) {
 }
 
 function numInput(num) {
-  if(display.textContent === "0") {
+  if(firstNumber === "no number" && num !== "0") {
     display.textContent = num;
-  } else {
+    firstNumber = num;
+  } else if (firstNumber !== "0"){
     display.textContent = display.textContent + num;
   }
+}
+
+function clearInput() {
+  firstNumber = "no number";
+  secondNumber = "no number";
+  operator = "no operator";
+  display.textContent = "0";
 }
 
 const buttonSeven = document.querySelector("#seven");
@@ -48,6 +56,7 @@ const buttonSix = document.querySelector("#six");
 const buttonOne = document.querySelector("#one");
 const buttonTwo = document.querySelector("#two");
 const buttonThree = document.querySelector("#three");
+const buttonZero = document.querySelector("#zero");
 const buttonAdd = document.querySelector("#add");
 const buttonSubtract = document.querySelector("#subtract");
 const buttonMultiply = document.querySelector("#multiply");
@@ -93,7 +102,15 @@ buttonThree.addEventListener("click", () => {
   numInput("3");
 });
 
-let firstNumber;
-let secondNumber;
-let operator;
+buttonZero.addEventListener("click", () => {
+  numInput("0");
+});
+
+buttonClear.addEventListener("click", () => {
+  clearInput();
+});
+
+let firstNumber = "no number";
+let secondNumber = "no number";
+let operator = "no operator";
 
