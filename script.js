@@ -17,16 +17,16 @@ function divide(a, b) {
 function operate(inputOperator, firstOperateNumber, secondOperateNumber) {
   switch(inputOperator) {
     case "+":
-      add(firstOperateNumber, secondOperateNumber);
+      return add(firstOperateNumber, secondOperateNumber);
       break;
     case "-":
-      subtract(firstOperateNumber, secondOperateNumber);
+      return subtract(firstOperateNumber, secondOperateNumber);
       break;
     case "*":
-      multiply(firstOperateNumber, secondOperateNumber);
+      return multiply(firstOperateNumber, secondOperateNumber);
       break;
     case "/":
-      divide(firstOperateNumber, secondOperateNumber);
+      return divide(firstOperateNumber, secondOperateNumber);
       break;
   }
 }
@@ -41,16 +41,15 @@ function numInput(inputNum) {
     display.textContent = firstNumber;
   }
 
-  if(secondNumber === "no number" && operator !== "no operator") {
+  if(secondNumber === "no number" && operator !== "no operator" && inputNum !== "0") {
     secondNumber = inputNum;
     display.textContent = display.textContent + secondNumber;
   } else if(secondNumber === "no number" && inputNum === "0" && operator !== "no operator") {
-
-  } else if (operator !== "no operator"){
+    secondNumber = "no number";
+  } else if (operator !== "no operator" && secondNumber !== "no number"){
     secondNumber = secondNumber + inputNum;
     display.textContent = display.textContent + inputNum;
   }
-  
 }
 
 function operatorInput(inputOperator) {
@@ -58,9 +57,10 @@ function operatorInput(inputOperator) {
     display.textContent = firstNumber + " " + inputOperator + " ";
     operator = inputOperator;
   } else if(secondNumber !== "no number") {
-    firstNumber = operate(operator, firstNumber, secondNumber);
+    firstNumber = operate(operator, firstNumber, secondNumber).toString();
     display.textContent = firstNumber + " " + inputOperator + " ";
     operator = inputOperator;
+    secondNumber = "no number";
   }
 }
 
