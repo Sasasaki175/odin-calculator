@@ -57,6 +57,10 @@ function operatorInput(inputOperator) {
   if(firstNumber !== "no number" && secondNumber === "no number") {
     display.textContent = firstNumber + " " + inputOperator + " ";
     operator = inputOperator;
+  } else if(secondNumber !== "no number") {
+    firstNumber = operate(operator, firstNumber, secondNumber);
+    display.textContent = firstNumber + " " + inputOperator + " ";
+    operator = inputOperator;
   }
 }
 
