@@ -31,20 +31,32 @@ function operate(operator, firstNumber, secondNumber) {
   }
 }
 
-function numInput(num) {
-  if((firstNumber === "no number" || display.textContent === "0") 
+function numInput(inputNum) {
+  if((firstNumber === "no number" || firstNumber === "0") 
   && operator === "no operator") {
-    display.textContent = num;
-    firstNumber = display.textContent;
-  } else {
-    display.textContent = display.textContent + num;
-    firstNumber = display.textContent;
+    firstNumber = inputNum;
+    display.textContent = firstNumber;
+  } else if (operator === "no operator"){
+    firstNumber = firstNumber + inputNum;
+    display.textContent = firstNumber;
   }
+
+  if(secondNumber === "no number" && operator !== "no operator") {
+    secondNumber = inputNum;
+    display.textContent = display.textContent + secondNumber;
+  } else if(secondNumber === "no number" && inputNum === "0" && operator !== "no operator") {
+
+  } else if (operator !== "no operator"){
+    secondNumber = secondNumber + inputNum;
+    display.textContent = display.textContent + inputNum;
+  }
+  
 }
 
-function operatorInput(operator) {
-  if(firstNumber !== "no number") {
-    display.textContent = firstNumber + " " + operator + " ";
+function operatorInput(inputOperator) {
+  if(firstNumber !== "no number" && secondNumber === "no number") {
+    display.textContent = firstNumber + " " + inputOperator + " ";
+    operator = inputOperator;
   }
 }
 
