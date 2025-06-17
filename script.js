@@ -16,18 +16,26 @@ function divide(a, b) {
 
 function operate(operator, firstNumber, secondNumber) {
   switch(operator) {
-    case 1:
+    case "+":
       add(firstNumber, secondNumber);
       break;
-    case 2:
+    case "-":
       subtract(firstNumber, secondNumber);
       break;
-    case 3:
+    case "*":
       multiply(firstNumber, secondNumber);
       break;
-    case 4:
+    case "/":
       divide(firstNumber, secondNumber);
       break;
+  }
+}
+
+function numInput(num) {
+  if(display.textContent === "0") {
+    display.textContent = num;
+  } else {
+    display.textContent = display.textContent + num;
   }
 }
 
@@ -46,6 +54,28 @@ const buttonMultiply = document.querySelector("#x");
 const buttonDivide = document.querySelector("#/");
 const buttonClear = document.querySelector("#c");
 const buttonEquals = document.querySelector("#=");
+
+const display = document.querySelector("#display");
+
+buttonSeven.addEventListener("click", () => {
+  numInput("7");
+});
+
+buttonEight.addEventListener("click", () => {
+  numInput("8");
+});
+
+buttonNine.addEventListener("click", () => {
+  numInput("9");
+});
+
+buttonFour.addEventListener("click", () => {
+  numInput("4");
+});
+
+buttonFive.addEventListener("click", () => {
+  numInput("5");
+});
 
 let firstNumber;
 let secondNumber;
