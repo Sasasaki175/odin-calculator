@@ -32,11 +32,12 @@ function operate(operator, firstNumber, secondNumber) {
 }
 
 function numInput(num) {
-  if(firstNumber === "no number" && num !== "0") {
+  if((firstNumber === "no number" || firstNumber ==="0") && operator === "no operator") {
     display.textContent = num;
     firstNumber = num;
-  } else if (firstNumber !== "0"){
+  } else {
     display.textContent = display.textContent + num;
+    firstNumber = display.textContent;
   }
 }
 
