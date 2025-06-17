@@ -31,6 +31,22 @@ function operate(operator, firstNumber, secondNumber) {
   }
 }
 
+const buttonSeven = document.querySelector("#7");
+const buttonEight = document.querySelector("#8");
+const buttonNine = document.querySelector("#9");
+const buttonFour = document.querySelector("#4");
+const buttonFive = document.querySelector("#5");
+const buttonSix = document.querySelector("#6");
+const buttonOne = document.querySelector("#1");
+const buttonTwo = document.querySelector("#2");
+const buttonThree = document.querySelector("#3");
+const buttonAdd = document.querySelector("#+");
+const buttonSubtract = document.querySelector("#-");
+const buttonMultiply = document.querySelector("#x");
+const buttonDivide = document.querySelector("#/");
+const buttonClear = document.querySelector("#c");
+const buttonEquals = document.querySelector("#=");
+
 let firstNumber;
 let secondNumber;
 let operator;
