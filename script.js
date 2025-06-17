@@ -64,6 +64,15 @@ function operatorInput(inputOperator) {
   }
 }
 
+function equelInput() {
+  if(firstNumber !== "no number" && secondNumber !== "no number" && operator !== "no operator") {
+    firstNumber = operate(operator, firstNumber, secondNumber).toString();
+    display.textContent = firstNumber;
+    secondNumber = "no number";
+    operator = "no operator";
+  }
+}
+
 function clearInput() {
   firstNumber = "no number";
   secondNumber = "no number";
@@ -144,6 +153,10 @@ buttonMultiply.addEventListener("click", () => {
 
 buttonDivide.addEventListener("click", () => {
   operatorInput("/");
+});
+
+buttonEquals.addEventListener("click", () => {
+  equelInput("=");
 });
 
 buttonClear.addEventListener("click", () => {
