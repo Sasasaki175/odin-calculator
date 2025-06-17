@@ -39,21 +39,21 @@ function numInput(num) {
   }
 }
 
-const buttonSeven = document.querySelector("#7");
-const buttonEight = document.querySelector("#8");
-const buttonNine = document.querySelector("#9");
-const buttonFour = document.querySelector("#4");
-const buttonFive = document.querySelector("#5");
-const buttonSix = document.querySelector("#6");
-const buttonOne = document.querySelector("#1");
-const buttonTwo = document.querySelector("#2");
-const buttonThree = document.querySelector("#3");
-const buttonAdd = document.querySelector("#+");
-const buttonSubtract = document.querySelector("#-");
-const buttonMultiply = document.querySelector("#x");
-const buttonDivide = document.querySelector("#/");
-const buttonClear = document.querySelector("#c");
-const buttonEquals = document.querySelector("#=");
+const buttonSeven = document.querySelector("#seven");
+const buttonEight = document.querySelector("#eight");
+const buttonNine = document.querySelector("#nine");
+const buttonFour = document.querySelector("#four");
+const buttonFive = document.querySelector("#five");
+const buttonSix = document.querySelector("#six");
+const buttonOne = document.querySelector("#one");
+const buttonTwo = document.querySelector("#two");
+const buttonThree = document.querySelector("#three");
+const buttonAdd = document.querySelector("#add");
+const buttonSubtract = document.querySelector("#subtract");
+const buttonMultiply = document.querySelector("#multiply");
+const buttonDivide = document.querySelector("#divide");
+const buttonClear = document.querySelector("#clear");
+const buttonEquals = document.querySelector("#equel");
 
 const display = document.querySelector("#display");
 
@@ -75,6 +75,22 @@ buttonFour.addEventListener("click", () => {
 
 buttonFive.addEventListener("click", () => {
   numInput("5");
+});
+
+buttonSix.addEventListener("click", () => {
+  numInput("6");
+});
+
+buttonOne.addEventListener("click", () => {
+  numInput("1");
+});
+
+buttonTwo.addEventListener("click", () => {
+  numInput("2");
+});
+
+buttonThree.addEventListener("click", () => {
+  numInput("3");
 });
 
 let firstNumber;
