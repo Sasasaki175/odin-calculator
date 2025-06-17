@@ -32,12 +32,19 @@ function operate(operator, firstNumber, secondNumber) {
 }
 
 function numInput(num) {
-  if((firstNumber === "no number" || firstNumber ==="0") && operator === "no operator") {
+  if((firstNumber === "no number" || display.textContent === "0") 
+  && operator === "no operator") {
     display.textContent = num;
-    firstNumber = num;
+    firstNumber = display.textContent;
   } else {
     display.textContent = display.textContent + num;
     firstNumber = display.textContent;
+  }
+}
+
+function operatorInput(operator) {
+  if(firstNumber !== "no number") {
+    display.textContent = firstNumber + " " + operator + " ";
   }
 }
 
@@ -105,6 +112,22 @@ buttonThree.addEventListener("click", () => {
 
 buttonZero.addEventListener("click", () => {
   numInput("0");
+});
+
+buttonAdd.addEventListener("click", () => {
+  operatorInput("+");
+});
+
+buttonSubtract.addEventListener("click", () => {
+  operatorInput("-");
+});
+
+buttonMultiply.addEventListener("click", () => {
+  operatorInput("*");
+});
+
+buttonDivide.addEventListener("click", () => {
+  operatorInput("/");
 });
 
 buttonClear.addEventListener("click", () => {
