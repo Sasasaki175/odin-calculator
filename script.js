@@ -1,17 +1,18 @@
+//Round the calculation result to 8 decimal places
 function add(a, b) {
-  return Number(a) + Number(b);
+  return Math.round((Number(a) + Number(b)) * (10 ** 8)) / (10 ** 8);
 }
 
 function subtract(a, b) {
-  return Number(a) - Number(b);
+  return Math.round((Number(a) - Number(b)) * (10 ** 8)) / (10 ** 8);
 }
 
 function multiply(a, b) {
-  return Number(a) * Number(b);
+  return Math.round((Number(a) * Number(b)) * (10 ** 8)) / (10 ** 8);
 }
 
 function divide(a, b) {
-  return Number(a) / Number(b);
+  return Math.round((Number(a) / Number(b)) * (10 ** 8)) / (10 ** 8);
 }
 
 function operate(inputOperator, firstOperateNumber, secondOperateNumber) {
