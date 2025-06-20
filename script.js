@@ -69,6 +69,7 @@ function equelInput() {
   if(firstNumber !== "no number" && secondNumber !== "no number" && operator !== "no operator") {
     firstNumber = operate(operator, firstNumber, secondNumber).toString();
     display.textContent = firstNumber;
+    firstNumber = "no number";
     secondNumber = "no number";
     operator = "no operator";
   }
